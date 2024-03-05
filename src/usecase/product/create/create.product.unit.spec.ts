@@ -1,4 +1,4 @@
-import ProductUseCase from "./create.product.usecase";
+import CreateProductUseCase from "./create.product.usecase";
 
 let input = {
     id: "123",
@@ -18,7 +18,7 @@ const MockRepository = () => {
 describe("Unit test create product use case", () => {
     it("should create a product use case", async () => {
         const productRepository = MockRepository();
-        const productCreateUseCase = new ProductUseCase(productRepository);
+        const productCreateUseCase = new CreateProductUseCase(productRepository);
 
         const output = {
             id: "123",
@@ -32,7 +32,7 @@ describe("Unit test create product use case", () => {
 
     it("Should return an error if id is not provided", async () => {
         const productRepository = MockRepository();
-        const productCreateUseCase = new ProductUseCase(productRepository);
+        const productCreateUseCase = new CreateProductUseCase(productRepository);
 
         input = { 
             id: "",
@@ -46,7 +46,7 @@ describe("Unit test create product use case", () => {
 
     it("Should return an error if name is not provided", async () => {
         const productRepository = MockRepository();
-        const productCreateUseCase = new ProductUseCase(productRepository);
+        const productCreateUseCase = new CreateProductUseCase(productRepository);
 
         input = { 
             id: "abc",
@@ -60,7 +60,7 @@ describe("Unit test create product use case", () => {
 
     it("Should return an error if price is less than zero", async () => {
         const productRepository = MockRepository();
-        const productCreateUseCase = new ProductUseCase(productRepository);
+        const productCreateUseCase = new CreateProductUseCase(productRepository);
 
         input = { 
             id: "abc",

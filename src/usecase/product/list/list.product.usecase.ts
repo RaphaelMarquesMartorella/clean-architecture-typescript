@@ -2,7 +2,7 @@ import Product from "../../../domain/product/entity/product";
 import ProductRepository from "../../../infrastructure/product/repository/sequelize/product.repository";
 import { InputListProductDto, OutputListProductDto } from "./list.product.dto";
 
-export default class ProductListUseCase {
+export default class ListProductUseCase {
     private productRepository: ProductRepository
 
     constructor(productRepository: ProductRepository) {
