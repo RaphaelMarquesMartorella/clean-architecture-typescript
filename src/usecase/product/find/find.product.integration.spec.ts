@@ -14,7 +14,7 @@ const product = {
     price: 200
 }
 
-describe("Test Product use case", () => {
+describe("Int test product find use case", () => {
 
     let sequelize: Sequelize;
 
