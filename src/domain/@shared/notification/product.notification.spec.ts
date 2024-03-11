@@ -2,24 +2,28 @@ import Notification from "./notification";
 
 describe("Unit tests for notifications", () => {
 
-    it("should accumulate multiple errors", () => {
-        const notification = new Notification();
-        
-        const error1 = {
-          message: "Name is required",
-          context: "product",
-        };
-        
-        const error2 = {
-          message: "Price is required",
-          context: "product",
-        };
-        
-        notification.addError(error1);
-        notification.addError(error2);
-        
-        expect(notification.messages("product")).toBe("product: Name is required,product: Price is required,");
-      });
+  it("should accumulate multiple errors", () => {
+    const notification = new Notification();
+    
+    const error1 = {
+      message: "Name is required",
+      context: "product",
+    };
+    
+    const error2 = {
+      message: "Price is required",
+      context: "product",
+    };
+    
+    notification.addError(error1);
+    notification.addError(error2);
+    
+    const errors = notification.getErrors();
+    
+    expect(errors).toContainEqual(error1);
+    expect(errors).toContainEqual(error2);
+  });
+  
   it("should create errors", () => {
     const notification = new Notification();
     const error = {
