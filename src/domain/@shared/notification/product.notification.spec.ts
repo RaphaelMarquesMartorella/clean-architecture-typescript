@@ -23,7 +23,7 @@ describe("Unit tests for notifications", () => {
     expect(errors).toContainEqual(error1);
     expect(errors).toContainEqual(error2);
   });
-  
+
   it("should create errors", () => {
     const notification = new Notification();
     const error = {
